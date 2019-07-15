@@ -11,7 +11,6 @@ public class YoutubeSchedulerApplicationTests {
 
 	@Test
 	public void contextLoads() {
-		System.out.println("Hello");
 	}
 
 }

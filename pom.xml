@@ -46,6 +46,13 @@
 		</dependency>
 		<!-- Added by the programmer -->
 		<dependency>
+			<groupId>com.oracle</groupId>
+			<artifactId>ojdbc8</artifactId>
+			<version>12.1.0</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/lib/ojdbc8</systemPath>
+		</dependency>
+		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-dbcp2</artifactId>
 			<version>2.6.0</version>
@@ -65,4 +72,5 @@
 			</plugin>
 		</plugins>
 	</build>
+
 </project>
