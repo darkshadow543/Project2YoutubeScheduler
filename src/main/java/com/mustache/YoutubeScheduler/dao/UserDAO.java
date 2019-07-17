@@ -15,17 +15,17 @@ public interface UserDAO extends JpaRepository<User, Integer> {
 	
 	User save(User user);
 
-	@Query("select u from Viewer u")
+	@Query("select u from User u")
 	List<User> list();
 	
-	@Query("select u from Viewer u where u.id = :userId")
+	@Query("select u from User u where u.id = :userId")
 	User findOne(@Param("userId") Integer id);
 
 	@Modifying
-	@Query("delete from Viewer where id = :userId")
+	@Query("delete from User where id = :userId")
 	void delete(@Param("userId") Integer id);
 	
-	@Query("select u from Viewer u where u.email = :email and u.password = :password")
+	@Query("select u from User u where u.email = :email and u.password = :password")
 	User findByEmailAndPassword(@Param("email") String email, @Param("password") String password);
 
 }

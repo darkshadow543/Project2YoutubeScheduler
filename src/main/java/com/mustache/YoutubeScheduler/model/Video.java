@@ -32,7 +32,7 @@ public class Video {
 
 	@ManyToOne (fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JoinColumn (name = "ChannelId")
-	private int channelId;
+	private Channel channel;
 
 	@Column(name = "VideoDescription")
 	private String description;
@@ -56,12 +56,12 @@ public class Video {
 		this.name = name;
 	}
 
-	public int getChannelId() {
-		return channelId;
+	public Channel getChannel() {
+		return channel;
 	}
 
-	public void setChannelId(int channelId) {
-		this.channelId = channelId;
+	public void setChannel(Channel channel) {
+		this.channel = channel;
 	}
 
 	public String getDescription() {

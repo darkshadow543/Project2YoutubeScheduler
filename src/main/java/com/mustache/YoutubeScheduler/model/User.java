@@ -39,10 +39,10 @@ public class User {
 	@Column(name = "isYoutuber")
 	private Boolean isYoutuber;
 	
-	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+	@OneToMany(mappedBy = "viewer", cascade = CascadeType.ALL, orphanRemoval = true)
 	private List<Channel> channels;
 	
-	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+	@OneToMany(mappedBy = "viewer", cascade = CascadeType.ALL, orphanRemoval = true)
 	private List<Subscription> subs;
 
 	public int getId() {
