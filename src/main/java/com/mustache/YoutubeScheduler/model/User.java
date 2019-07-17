@@ -44,6 +44,68 @@ public class User {
 	
 	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
 	private List<Subscription> subs;
-	
 
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public Boolean getIsYoutuber() {
+		return isYoutuber;
+	}
+
+	public void setIsYoutuber(Boolean isYoutuber) {
+		this.isYoutuber = isYoutuber;
+	}
+
+	public List<Channel> getChannels() {
+		return channels;
+	}
+
+	public void setChannels(List<Channel> channels) {
+		this.channels = channels;
+	}
+
+	public List<Subscription> getSubs() {
+		return subs;
+	}
+
+	public void setSubs(List<Subscription> subs) {
+		this.subs = subs;
+	}
+
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", userName=" + userName + ", email=" + email + ", password=" + password
+				+ ", isYoutuber=" + isYoutuber + ", channels=" + channels + ", subs=" + subs + "]";
+	}
+	
+	
 }
