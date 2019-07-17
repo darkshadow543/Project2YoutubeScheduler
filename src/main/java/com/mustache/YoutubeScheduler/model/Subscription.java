@@ -29,5 +29,29 @@ public class Subscription {
 	
 	@ManyToOne (fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	private Channel channel;
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public Channel getChannel() {
+		return channel;
+	}
+
+	public void setChannel(Channel channel) {
+		this.channel = channel;
+	}
 	
 }

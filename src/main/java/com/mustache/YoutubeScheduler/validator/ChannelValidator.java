@@ -2,11 +2,13 @@ package com.mustache.YoutubeScheduler.validator;
 
 import org.springframework.stereotype.Component;
 
+import com.mustache.YoutubeScheduler.model.Channel;
+
 @Component
 public class ChannelValidator {
 
-	public ChannelValidator() {
-		// TODO Auto-generated constructor stub
+	public void ValidateChannel(Channel chan) {
+		
 	}
 
 }

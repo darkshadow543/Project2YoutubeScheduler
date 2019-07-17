@@ -33,7 +33,6 @@ public class Channel {
 	@JoinColumn(name = "userid")
 	private User owner;
 	
-	
 	@OneToMany(mappedBy = "channel", cascade = CascadeType.ALL, orphanRemoval = true)
 	private List<Video> videos;
 	
