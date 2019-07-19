@@ -30,7 +30,7 @@ public class Channel {
 	private int id;
 	
 	@ManyToOne (fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-	@JoinColumn(name = "userid")
+	@JoinColumn(name = "ownerid")
 	private User owner;
 	
 	@OneToMany(mappedBy = "channel", cascade = CascadeType.ALL, orphanRemoval = true)
