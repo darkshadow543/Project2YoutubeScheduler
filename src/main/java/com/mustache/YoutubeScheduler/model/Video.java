@@ -2,15 +2,11 @@ package com.mustache.YoutubeScheduler.model;
 
 import java.sql.Date;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -30,11 +26,10 @@ public class Video {
 	@Column(name = "VideoName")
 	private String name;
 
-	@ManyToOne (fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-	@JoinColumn (name = "ChannelId")
-	private Channel channel;
+	@Column (name = "ChannelId")
+	private int channel;
 
-	@Column(name = "VideoDescription")
+	@Column(name = "Description")
 	private String description;
 	
 	@Column(name = "ReleaseDate")
@@ -56,11 +51,11 @@ public class Video {
 		this.name = name;
 	}
 
-	public Channel getChannel() {
+	public int getChannel() {
 		return channel;
 	}
 
-	public void setChannel(Channel channel) {
+	public void setChannel(int channel) {
 		this.channel = channel;
 	}
 

@@ -11,7 +11,7 @@ public class ChannelValidator {
 	public void ValidateChannel(Channel chan) throws ValidatorException {
 		if (chan.getName() != null || chan.getName().equals("")){
 			throw new ValidatorException("Name cannot be null");
-		} else if (chan.getOwner() == null) {
+		} else if (chan.getOwner() == 0) {
 			throw new ValidatorException("Name cannot be null");
 		}
 	}

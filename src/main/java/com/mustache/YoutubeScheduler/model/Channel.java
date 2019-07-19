@@ -5,12 +5,9 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
@@ -29,9 +26,9 @@ public class Channel {
 	@Column(name = "channelid")
 	private int id;
 	
-	@ManyToOne (fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-	@JoinColumn(name = "ownerid")
-	private User owner;
+	
+	@Column(name = "ownerid")
+	private int owner;
 	
 	@OneToMany(mappedBy = "channel", cascade = CascadeType.ALL, orphanRemoval = true)
 	private List<Video> videos;
@@ -50,12 +47,20 @@ public class Channel {
 		this.id = id;
 	}
 
-	public User getOwner() {
+	public int getOwner() {
 		return owner;
 	}
 
-	public void setOwner(User owner) {
+	public void setOwner(int owner) {
 		this.owner = owner;
+	}
+
+	public List<Subscription> getSubs() {
+		return subs;
+	}
+
+	public void setSubs(List<Subscription> subs) {
+		this.subs = subs;
 	}
 
 	public List<Video> getVideos() {

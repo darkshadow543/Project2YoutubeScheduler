@@ -1,13 +1,10 @@
 package com.mustache.YoutubeScheduler.model;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -24,11 +21,11 @@ public class Subscription {
 	@Column(name = "SubscriptionId")
 	private int id;
 	
-	@ManyToOne (fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-	private User user;
+	@Column(name = "userid")
+	private int user;
 	
-	@ManyToOne (fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-	private Channel channel;
+	@Column(name = "channelid")
+	private int channel;
 
 	public int getId() {
 		return id;
@@ -38,19 +35,19 @@ public class Subscription {
 		this.id = id;
 	}
 
-	public User getUser() {
+	public int getUser() {
 		return user;
 	}
 
-	public void setUser(User user) {
+	public void setUser(int user) {
 		this.user = user;
 	}
 
-	public Channel getChannel() {
+	public int getChannel() {
 		return channel;
 	}
 
-	public void setChannel(Channel channel) {
+	public void setChannel(int channel) {
 		this.channel = channel;
 	}
 	

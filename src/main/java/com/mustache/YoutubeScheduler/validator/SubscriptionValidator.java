@@ -13,9 +13,9 @@ public class SubscriptionValidator {
 	}
 	
 	public void ValidateSub(Subscription sub) throws ValidatorException {
-		if (sub.getChannel() == null) {
+		if (sub.getChannel() < 0) {
 			throw new ValidatorException("Name cannot be null");
-		} else if (sub.getUser() == null) {
+		} else if (sub.getUser() < 0) {
 			throw new ValidatorException("Name cannot be null");
 		}
 	}

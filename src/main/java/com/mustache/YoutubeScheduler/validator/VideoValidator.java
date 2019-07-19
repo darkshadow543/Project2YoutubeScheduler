@@ -14,7 +14,7 @@ public class VideoValidator {
 	public void ValidateVideo(Video video) throws ValidatorException {
 		if (video.getName() != null || video.getName().equals("")){
 			throw new ValidatorException("Name cannot be null");
-		} else if (video.getChannel().getId() < 0) {
+		} else if (video.getChannel() < 0) {
 			throw new ValidatorException("Faulty Channel id");
 		}
 	}
