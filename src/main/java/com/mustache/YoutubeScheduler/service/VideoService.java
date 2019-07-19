@@ -41,6 +41,6 @@ public class VideoService {
 	
 	@Transactional
 	public Video getVideo(Integer id) {
-		return dao.getOne(id);
+		return dao.select(id);
 	}
 }
