@@ -7,15 +7,21 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.mustache.YoutubeScheduler.dao.SubscriptionDAO;
 import com.mustache.YoutubeScheduler.dao.UserDAO;
 import com.mustache.YoutubeScheduler.exception.ServiceException;
+import com.mustache.YoutubeScheduler.model.Subscription;
 import com.mustache.YoutubeScheduler.model.User;
+import com.mustache.YoutubeScheduler.validator.SubscriptionValidator;
 
 @Service
 public class UserService {
 	
 	@Autowired
 	private UserDAO dao;
+	
+	@Autowired 
+	private SubscriptionDAO subdao;
 	
 	public UserService() {
 		
@@ -62,5 +68,17 @@ public class UserService {
 		}
 		return user;
 	}
+	
+	@Transactional
+	public void sub(Subscription sub) {
+		SubscriptionValidator.ValidateSub(sub);
+		subdao.save(sub);
+	}
+	
+	public void unsub(int id) {
+		subdao.delete(id);
+	}
+	
+	
 
 }

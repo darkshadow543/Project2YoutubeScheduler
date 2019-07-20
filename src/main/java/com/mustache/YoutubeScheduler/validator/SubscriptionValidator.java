@@ -12,7 +12,7 @@ public class SubscriptionValidator {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public void ValidateSub(Subscription sub) throws ValidatorException {
+	public static void ValidateSub(Subscription sub) throws ValidatorException {
 		if (sub.getChannel() < 0) {
 			throw new ValidatorException("Name cannot be null");
 		} else if (sub.getUser() < 0) {

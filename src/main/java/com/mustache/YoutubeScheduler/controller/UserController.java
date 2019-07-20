@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.mustache.YoutubeScheduler.service.UserService;
+import com.mustache.YoutubeScheduler.model.Subscription;
 import com.mustache.YoutubeScheduler.model.User;
 
 @CrossOrigin
@@ -65,6 +66,16 @@ public class UserController {
 	public void delete(@PathVariable("id") Integer id) {
 		userService.delete(id);
 
+	}
+	
+	@PostMapping("/subscribe")
+	public void subscribe(@RequestBody Subscription sub) {
+		userService.sub(sub);
+	}
+	
+	@DeleteMapping("/suscribe/{id}")
+	public void unsub(@PathVariable("id") Integer id) {
+		userService.unsub(id);
 	}
 	
 	
