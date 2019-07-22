@@ -15,13 +15,8 @@ public interface SubscriptionDAO extends JpaRepository<Subscription, Integer> {
 	
 	Subscription save(Subscription sub);
 
-	@Query("select s from Subscription s")
-	List<Subscription> list();
-
 	@Modifying
 	@Query("delete from Subscription where id = :id")
 	void delete(@Param("id") Integer id);
 	
-	@Query ("select s from Subscription s where id = :id")
-	Subscription select(@Param("id") Integer id);
 }
