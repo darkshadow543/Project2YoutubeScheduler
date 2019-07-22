@@ -1,0 +1,8 @@
+server:
+  port: 8090
+spring:
+  datasource: 
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    url: jdbc:oracle:thin:@namedoesnotmatter.cfmcq1xio1cx.us-west-2.rds.amazonaws.com:1521:ORCL
+    username: root
+    password: 29093012951077
