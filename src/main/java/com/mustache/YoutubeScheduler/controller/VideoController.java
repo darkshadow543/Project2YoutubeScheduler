@@ -27,32 +27,32 @@ import com.mustache.YoutubeScheduler.service.VideoService;
 	@Autowired
 	private VideoService videoserv;
 	
-	@PostMapping()
-	public ResponseEntity<?> register(@RequestBody Video vid) {
+	@PostMapping("/upload")
+	public ResponseEntity<?> Upload(@RequestBody Video vid) {
 		System.out.println("VideoController->save");
 		videoserv.createVideo(vid);
 		return new ResponseEntity<>(HttpStatus.CREATED);
 	}
 	
-	@PutMapping("/{id}")
+	@PutMapping("/update/{id}")
 	public @ResponseBody void update(@PathVariable("id") Integer id,@RequestBody Video vid) {
-		System.out.println("UserController->update" + id);
+		System.out.println("VideoController->update" + id);
 		videoserv.update(vid);
 	}
 	
-	@GetMapping()
+	@PostMapping("/getall")
 	public List<Video> list() {
 		List<Video> list = videoserv.getAll();
 		return list;
 	}
 
-	@GetMapping("/{id}")
+	@GetMapping("/get/{id}")
 	public Video findOne(@PathVariable("id") Integer id) {
 		Video video = videoserv.getVideo(id);
 		return video;
 	}
 	
-	@DeleteMapping("/{id}")
+	@DeleteMapping("/delete/{id}")
 	public void delete(@PathVariable("id") Integer id) {
 		videoserv.delete(id);
 	}
