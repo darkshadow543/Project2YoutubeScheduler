@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.mustache.YoutubeScheduler.service.UserService;
+import com.mustache.YoutubeScheduler.model.JavaMailUtil;
 import com.mustache.YoutubeScheduler.model.User;
 
 @CrossOrigin
@@ -35,6 +36,15 @@ public class UserController {
 		userService.createUser(user);
 		return new ResponseEntity<>(HttpStatus.CREATED);
 	}
+	
+//	@PostMapping("/recoverPassword")
+//	public ResponseEntity<?> recoverPassword(@RequestBody String email, int id) {
+//		System.out.println("UserController->recoverPassword");
+//		JavaMailUtil mailer = new JavaMailUtil();
+//		mailer.sendPassword(email, userService.findOne(id).getPassword());
+//		User searchUser = userService.login(user);
+//		return new ResponseEntity<>(searchUser, HttpStatus.OK);
+//	}
 	
 	@PostMapping("/login")
 	public ResponseEntity<?> login(@RequestBody User user) {
