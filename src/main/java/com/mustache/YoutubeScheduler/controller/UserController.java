@@ -73,7 +73,7 @@ public class UserController {
 		userService.sub(sub);
 	}
 	
-	@DeleteMapping("/suscribe/{id}")
+	@DeleteMapping("/subscribe/{id}")
 	public void unsub(@PathVariable("id") Integer id) {
 		userService.unsub(id);
 	}
