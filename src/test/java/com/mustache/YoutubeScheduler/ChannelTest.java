@@ -50,11 +50,7 @@ public class ChannelTest {
 	
 	@Test
 	public void testSave() throws Exception {
-		Channel chan = new Channel();
-		chan.setName("test");
-		chan.setOwner(1);
-		chan.setSubs(new ArrayList<Subscription>());
-		chan.setVideos(new ArrayList<Video>());
+		Channel chan = new Channel(1, 1, null, null, "test");
 		
 		when(mockService.getChannal(any(Integer.class))).thenReturn(chan);
 		

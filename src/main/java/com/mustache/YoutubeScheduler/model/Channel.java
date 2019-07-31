@@ -13,13 +13,28 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "channel")
+@Table(name = "Channel")
 public class Channel {
 	
 	public Channel() {
-		// TODO Auto-generated constructor stub
+		super();
 	}
-	
+
+	@Override
+	public String toString() {
+		return "Channel [id=" + id + ", owner=" + owner + ", videos=" + videos + ", subs=" + subs + ", Name=" + Name
+				+ "]";
+	}
+
+	public Channel(int id, int owner, List<Video> videos, List<Subscription> subs, String name) {
+		super();
+		this.id = id;
+		this.owner = owner;
+		this.videos = videos;
+		this.subs = subs;
+		Name = name;
+	}
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "channelid_gen")
 	@SequenceGenerator(name = "channelid_gen", sequenceName = "ChannelIdSeq", allocationSize = 1)
